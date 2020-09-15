@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,10 @@
 		B15386FB2508B80200FE3845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B15386FA2508B80200FE3845 /* Assets.xcassets */; };
 		B15386FE2508B80200FE3845 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B15386FD2508B80200FE3845 /* Preview Assets.xcassets */; };
 		B15387012508B80200FE3845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15386FF2508B80200FE3845 /* LaunchScreen.storyboard */; };
+		B190BA5425111D0E00077FDA /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA5325111D0E00077FDA /* GaugeView.swift */; };
+		B190BA56251120CC00077FDA /* MonsterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA55251120CC00077FDA /* MonsterView.swift */; };
+		B1E5C0082510FF9A001A4679 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5C0072510FF9A001A4679 /* BattleView.swift */; };
+		B1E5C00B2511111C001A4679 /* DragonQuestFC.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E5C00A2511111C001A4679 /* DragonQuestFC.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		B15386FD2508B80200FE3845 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B15387002508B80200FE3845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B15387022508B80200FE3845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B190BA5325111D0E00077FDA /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
+		B190BA55251120CC00077FDA /* MonsterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterView.swift; sourceTree = "<group>"; };
+		B1E5C0072510FF9A001A4679 /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
+		B1E5C00A2511111C001A4679 /* DragonQuestFC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DragonQuestFC.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +64,6 @@
 				02A90FD9873B41C8BAF202A0 /* Pods-M1-MeshiQue.debug.xcconfig */,
 				0CEA63D32E2FC8014CA8E7E6 /* Pods-M1-MeshiQue.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,9 +88,10 @@
 		B15386F32508B80100FE3845 /* M1-MeshiQue */ = {
 			isa = PBXGroup;
 			children = (
+				B1E5C009251110F5001A4679 /* fonts */,
+				B190BA57251120DA00077FDA /* View */,
 				B15386F42508B80100FE3845 /* AppDelegate.swift */,
 				B15386F62508B80100FE3845 /* SceneDelegate.swift */,
-				B15386F82508B80100FE3845 /* ContentView.swift */,
 				B15386FA2508B80200FE3845 /* Assets.xcassets */,
 				B15386FF2508B80200FE3845 /* LaunchScreen.storyboard */,
 				B15387022508B80200FE3845 /* Info.plist */,
@@ -98,6 +106,25 @@
 				B15386FD2508B80200FE3845 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B190BA57251120DA00077FDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B15386F82508B80100FE3845 /* ContentView.swift */,
+				B1E5C0072510FF9A001A4679 /* BattleView.swift */,
+				B190BA5325111D0E00077FDA /* GaugeView.swift */,
+				B190BA55251120CC00077FDA /* MonsterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1E5C009251110F5001A4679 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B1E5C00A2511111C001A4679 /* DragonQuestFC.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +190,7 @@
 				B15387012508B80200FE3845 /* LaunchScreen.storyboard in Resources */,
 				B15386FE2508B80200FE3845 /* Preview Assets.xcassets in Resources */,
 				B15386FB2508B80200FE3845 /* Assets.xcassets in Resources */,
+				B1E5C00B2511111C001A4679 /* DragonQuestFC.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,9 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B190BA5425111D0E00077FDA /* GaugeView.swift in Sources */,
 				B15386F52508B80100FE3845 /* AppDelegate.swift in Sources */,
 				B15386F72508B80100FE3845 /* SceneDelegate.swift in Sources */,
+				B1E5C0082510FF9A001A4679 /* BattleView.swift in Sources */,
 				B15386F92508B80100FE3845 /* ContentView.swift in Sources */,
+				B190BA56251120CC00077FDA /* MonsterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,12 +10,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        ZStack{
+            BattleView()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().previewLayout(.fixed(width: 2160, height: 1620))
+        ContentView().previewLayout(.fixed(width: 1080, height: 810))
     }
 }
