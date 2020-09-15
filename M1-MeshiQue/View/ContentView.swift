@@ -9,9 +9,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var startFlag: Bool = false
     var body: some View {
         ZStack{
-            BattleView()
+            OpeningView(startFlag: $startFlag)
+            if startFlag {
+                BattleView()
+            }
         }
     }
 }

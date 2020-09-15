@@ -16,6 +16,7 @@
 		B15387012508B80200FE3845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15386FF2508B80200FE3845 /* LaunchScreen.storyboard */; };
 		B190BA5425111D0E00077FDA /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA5325111D0E00077FDA /* GaugeView.swift */; };
 		B190BA56251120CC00077FDA /* MonsterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA55251120CC00077FDA /* MonsterView.swift */; };
+		B190BA5925112C8300077FDA /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA5825112C8300077FDA /* OpeningView.swift */; };
 		B1E5C0082510FF9A001A4679 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5C0072510FF9A001A4679 /* BattleView.swift */; };
 		B1E5C00B2511111C001A4679 /* DragonQuestFC.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E5C00A2511111C001A4679 /* DragonQuestFC.ttf */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		B15387022508B80200FE3845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B190BA5325111D0E00077FDA /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
 		B190BA55251120CC00077FDA /* MonsterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterView.swift; sourceTree = "<group>"; };
+		B190BA5825112C8300077FDA /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
 		B1E5C0072510FF9A001A4679 /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
 		B1E5C00A2511111C001A4679 /* DragonQuestFC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DragonQuestFC.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 				B1E5C0072510FF9A001A4679 /* BattleView.swift */,
 				B190BA5325111D0E00077FDA /* GaugeView.swift */,
 				B190BA55251120CC00077FDA /* MonsterView.swift */,
+				B190BA5825112C8300077FDA /* OpeningView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				B15386F52508B80100FE3845 /* AppDelegate.swift in Sources */,
 				B15386F72508B80100FE3845 /* SceneDelegate.swift in Sources */,
 				B1E5C0082510FF9A001A4679 /* BattleView.swift in Sources */,
+				B190BA5925112C8300077FDA /* OpeningView.swift in Sources */,
 				B15386F92508B80100FE3845 /* ContentView.swift in Sources */,
 				B190BA56251120CC00077FDA /* MonsterView.swift in Sources */,
 			);
