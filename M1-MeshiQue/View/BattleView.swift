@@ -103,7 +103,7 @@ struct BattleView: View {
                                 .font(.custom("DragonQuestFC", size: 35))
                                 .foregroundColor(.white)
                                 .offset(y: -8)
-                            HeroGaugeView(value: meshiqueViewModel.hero.hpValue)
+                            HeroGaugeView(value: $meshiqueViewModel.hero.hpValue)
                         }
                             .offset(x: -190, y: -60)
                         Text("てきがこうげきしてきた")

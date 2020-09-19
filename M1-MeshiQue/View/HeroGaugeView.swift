@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct HeroGaugeView: View {
-    @State var value: Int = 200
+    @Binding var value: Int
     var body: some View {
         ZStack{
             Capsule()
@@ -26,6 +26,6 @@ struct HeroGaugeView: View {
 
 struct HeroGaugeView_Previews: PreviewProvider {
     static var previews: some View {
-        HeroGaugeView()
+        HeroGaugeView(value: .constant(300))
     }
 }
