@@ -13,7 +13,9 @@ struct BattleView: View {
     var monster01_name: String = "monster01"
     var monster02_name: String = "monster02"
     var monster03_name: String = "monster03"
+    @EnvironmentObject var meshiqueViewModel: MeshiQueViewModel
     @State var arrow: [Bool] = [true, false, false]
+    
     var body: some View {
         ZStack{
             Image(back_img_name)
@@ -32,7 +34,7 @@ struct BattleView: View {
                                 .frame(width: 40, height: 40)
                         }
                         Button(action: {self.arrow = [true, false, false]}){
-                            MonsterView(monster_name: monster01_name, hpValue: 100)
+                            MonsterView(monster: meshiqueViewModel.enemyList[0])
                         }
                     }
                     VStack {
@@ -44,7 +46,7 @@ struct BattleView: View {
                                 .frame(width: 40, height: 40)
                         }
                         Button(action: {self.arrow = [false, true, false]}){
-                            MonsterView(monster_name: monster02_name, hpValue: 70)
+                            MonsterView(monster: meshiqueViewModel.enemyList[1])
                         }
                     }
                     VStack {
@@ -56,7 +58,7 @@ struct BattleView: View {
                                 .frame(width: 40, height: 40)
                         }
                         Button(action: {self.arrow = [false, false, true]}){
-                            MonsterView(monster_name: monster03_name, hpValue: 50)
+                            MonsterView(monster: meshiqueViewModel.enemyList[2])
                         }
                     }
                 }
@@ -66,7 +68,7 @@ struct BattleView: View {
                         Text("こめ")
                             .font(.custom("DragonQuestFC", size: 65))
                             .foregroundColor(.white)
-                        Text("にく")
+                        Text("たまご")
                             .font(.custom("DragonQuestFC", size: 65))
                             .foregroundColor(.white)
                         Text("さかな")
@@ -84,11 +86,19 @@ struct BattleView: View {
                             .border(Color.white, width: 5)
                             .cornerRadius(5))
                     .frame(width:200, height: 300)
+                    VStack{
+                        HeroGaugeView(value: 200)
+                            .offset(x: -230, y: -60)
+                        Text("てきがこうげきしてきた")
+                            .font(.custom("DragonQuestFC", size: 80))
+                            .foregroundColor(.white)
+                    }
+                    .frame(width:830, height: 300)
+                    .background(
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.black)
-                        .frame(width:830, height: 300)
                         .border(Color.white, width: 5)
-                        .cornerRadius(5)
+                        .cornerRadius(5))
                 }
                 .padding(15)
             }
@@ -98,6 +108,6 @@ struct BattleView: View {
 
 struct BattleView_Previews: PreviewProvider {
     static var previews: some View {
-        BattleView().previewLayout(.fixed(width: 1080, height: 810))
+        BattleView().previewLayout(.fixed(width: 1080, height: 810)).environmentObject(MeshiQueViewModel())
     }
 }

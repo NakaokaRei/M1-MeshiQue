@@ -9,17 +9,17 @@
 import SwiftUI
 
 struct MonsterView: View {
-    var monster_name: String = "monster01"
+    var monster: Enemy = Enemy()
     var hpValue: Int = 50
     var body: some View {
         VStack {
-            Image(monster_name)
+            Image(monster.name)
                 .renderingMode(.original)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 270, height: 270)
                 .padding(15)
-            GaugeView(value: hpValue)
+            GaugeView(value: monster.hpValue)
         }
     }
 }

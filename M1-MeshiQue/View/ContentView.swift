@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var meshiqueViewModel: MeshiQueViewModel
     @State var startFlag: Bool = false
     var body: some View {
         ZStack{
@@ -22,6 +23,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().previewLayout(.fixed(width: 1080, height: 810))
+        ContentView().previewLayout(.fixed(width: 1080, height: 810)).environmentObject(MeshiQueViewModel())
     }
 }

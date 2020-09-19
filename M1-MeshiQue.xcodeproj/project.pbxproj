@@ -14,9 +14,14 @@
 		B15386FB2508B80200FE3845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B15386FA2508B80200FE3845 /* Assets.xcassets */; };
 		B15386FE2508B80200FE3845 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B15386FD2508B80200FE3845 /* Preview Assets.xcassets */; };
 		B15387012508B80200FE3845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15386FF2508B80200FE3845 /* LaunchScreen.storyboard */; };
+		B174311C25162708001BFC27 /* HeroGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B174311B25162708001BFC27 /* HeroGaugeView.swift */; };
+		B174311F25163FDE001BFC27 /* MeshiQueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B174311E25163FDE001BFC27 /* MeshiQueViewModel.swift */; };
+		B17431222516407F001BFC27 /* EnemeyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17431212516407F001BFC27 /* EnemeyModel.swift */; };
+		B174312425164527001BFC27 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B174312325164527001BFC27 /* HeroModel.swift */; };
 		B190BA5425111D0E00077FDA /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA5325111D0E00077FDA /* GaugeView.swift */; };
 		B190BA56251120CC00077FDA /* MonsterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA55251120CC00077FDA /* MonsterView.swift */; };
 		B190BA5925112C8300077FDA /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA5825112C8300077FDA /* OpeningView.swift */; };
+		B1C615CA2516572200BDA779 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C615C92516572200BDA779 /* Helper.swift */; };
 		B1E5C0082510FF9A001A4679 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5C0072510FF9A001A4679 /* BattleView.swift */; };
 		B1E5C00B2511111C001A4679 /* DragonQuestFC.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E5C00A2511111C001A4679 /* DragonQuestFC.ttf */; };
 /* End PBXBuildFile section */
@@ -33,9 +38,14 @@
 		B15386FD2508B80200FE3845 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B15387002508B80200FE3845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B15387022508B80200FE3845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B174311B25162708001BFC27 /* HeroGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroGaugeView.swift; sourceTree = "<group>"; };
+		B174311E25163FDE001BFC27 /* MeshiQueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshiQueViewModel.swift; sourceTree = "<group>"; };
+		B17431212516407F001BFC27 /* EnemeyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemeyModel.swift; sourceTree = "<group>"; };
+		B174312325164527001BFC27 /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
 		B190BA5325111D0E00077FDA /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
 		B190BA55251120CC00077FDA /* MonsterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterView.swift; sourceTree = "<group>"; };
 		B190BA5825112C8300077FDA /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
+		B1C615C92516572200BDA779 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		B1E5C0072510FF9A001A4679 /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
 		B1E5C00A2511111C001A4679 /* DragonQuestFC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DragonQuestFC.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				B1E5C009251110F5001A4679 /* fonts */,
+				B17431202516403D001BFC27 /* Model */,
+				B174311D25163E7A001BFC27 /* ViewModel */,
 				B190BA57251120DA00077FDA /* View */,
 				B15386F42508B80100FE3845 /* AppDelegate.swift */,
 				B15386F62508B80100FE3845 /* SceneDelegate.swift */,
@@ -110,12 +122,31 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B174311D25163E7A001BFC27 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B174311E25163FDE001BFC27 /* MeshiQueViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B17431202516403D001BFC27 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B17431212516407F001BFC27 /* EnemeyModel.swift */,
+				B174312325164527001BFC27 /* HeroModel.swift */,
+				B1C615C92516572200BDA779 /* Helper.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B190BA57251120DA00077FDA /* View */ = {
 			isa = PBXGroup;
 			children = (
 				B15386F82508B80100FE3845 /* ContentView.swift */,
 				B1E5C0072510FF9A001A4679 /* BattleView.swift */,
 				B190BA5325111D0E00077FDA /* GaugeView.swift */,
+				B174311B25162708001BFC27 /* HeroGaugeView.swift */,
 				B190BA55251120CC00077FDA /* MonsterView.swift */,
 				B190BA5825112C8300077FDA /* OpeningView.swift */,
 			);
@@ -246,13 +277,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B174311C25162708001BFC27 /* HeroGaugeView.swift in Sources */,
 				B190BA5425111D0E00077FDA /* GaugeView.swift in Sources */,
+				B174312425164527001BFC27 /* HeroModel.swift in Sources */,
 				B15386F52508B80100FE3845 /* AppDelegate.swift in Sources */,
 				B15386F72508B80100FE3845 /* SceneDelegate.swift in Sources */,
+				B17431222516407F001BFC27 /* EnemeyModel.swift in Sources */,
 				B1E5C0082510FF9A001A4679 /* BattleView.swift in Sources */,
+				B174311F25163FDE001BFC27 /* MeshiQueViewModel.swift in Sources */,
 				B190BA5925112C8300077FDA /* OpeningView.swift in Sources */,
 				B15386F92508B80100FE3845 /* ContentView.swift in Sources */,
 				B190BA56251120CC00077FDA /* MonsterView.swift in Sources */,
+				B1C615CA2516572200BDA779 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
