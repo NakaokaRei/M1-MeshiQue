@@ -9,8 +9,7 @@
 import SwiftUI
 
 struct MonsterView: View {
-    var monster: Monster = Monster()
-    var hpValue: Int = 50
+    @Binding var monster: Monster
     var body: some View {
         VStack {
             Image(monster.name)
@@ -19,13 +18,13 @@ struct MonsterView: View {
                 .scaledToFill()
                 .frame(width: 270, height: 270)
                 .padding(15)
-            GaugeView(value: monster.hpValue)
+            GaugeView(value: $monster.hpValue)
         }
     }
 }
 
 struct MonsterView_Previews: PreviewProvider {
     static var previews: some View {
-        MonsterView()
+        MonsterView(monster: .constant(Monster()))
     }
 }

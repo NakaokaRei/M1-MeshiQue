@@ -16,9 +16,8 @@ class Hero {
         self.hpValue = hpValue
     }
     
-    func attack() -> Int{
-        let damage = skills.randomElement()!
+    func attack(selecedSkill: Int) -> Int{
+        let damage = skills[selecedSkill]
         return damage
     }
-    
 }

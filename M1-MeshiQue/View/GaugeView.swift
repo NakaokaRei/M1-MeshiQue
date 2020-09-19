@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct GaugeView: View {
-    @State var value: Int = 100
+    @Binding var value: Int
     var body: some View {
         ZStack{
             Capsule()
@@ -26,6 +26,6 @@ struct GaugeView: View {
 
 struct GaugeView_Previews: PreviewProvider {
     static var previews: some View {
-        GaugeView()
+        GaugeView(value: .constant(100))
     }
 }
