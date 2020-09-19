@@ -10,11 +10,10 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var meshiqueViewModel: MeshiQueViewModel
-    @State var startFlag: Bool = false
     var body: some View {
         ZStack{
-            OpeningView(startFlag: $startFlag)
-            if startFlag {
+            OpeningView()
+            if meshiqueViewModel.startFlag {
                 BattleView()
             }
         }

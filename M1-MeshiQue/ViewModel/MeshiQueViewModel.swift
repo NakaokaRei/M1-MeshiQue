@@ -10,18 +10,17 @@ import Foundation
 import Combine
 
 class MeshiQueViewModel: ObservableObject {
-    @Published var enemyList: [Enemy] = []
-    
-    init(){
-        enemeySetUp()
-    }
+    @Published var monsterList: [Monster] = [Monster(), Monster(), Monster()]
+    @Published var startFlag: Bool = false
     
     func enemeySetUp(){
+        monsterList = []
         let name1 = monster_img_list.randomElement()!
         let name2 = monster_img_list.randomElement()!
         let name3 = monster_img_list.randomElement()!
-        self.enemyList.append(Enemy(name: name1))
-        self.enemyList.append(Enemy(name: name2))
-        self.enemyList.append(Enemy(name: name3))
+        self.monsterList.append(Monster(name: name1))
+        self.monsterList.append(Monster(name: name2))
+        self.monsterList.append(Monster(name: name3))
     }
+    
 }

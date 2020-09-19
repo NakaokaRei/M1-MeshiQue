@@ -34,7 +34,7 @@ struct BattleView: View {
                                 .frame(width: 40, height: 40)
                         }
                         Button(action: {self.arrow = [true, false, false]}){
-                            MonsterView(monster: meshiqueViewModel.enemyList[0])
+                            MonsterView(monster: meshiqueViewModel.monsterList[0])
                         }
                     }
                     VStack {
@@ -46,7 +46,7 @@ struct BattleView: View {
                                 .frame(width: 40, height: 40)
                         }
                         Button(action: {self.arrow = [false, true, false]}){
-                            MonsterView(monster: meshiqueViewModel.enemyList[1])
+                            MonsterView(monster: meshiqueViewModel.monsterList[1])
                         }
                     }
                     VStack {
@@ -58,7 +58,7 @@ struct BattleView: View {
                                 .frame(width: 40, height: 40)
                         }
                         Button(action: {self.arrow = [false, false, true]}){
-                            MonsterView(monster: meshiqueViewModel.enemyList[2])
+                            MonsterView(monster: meshiqueViewModel.monsterList[2])
                         }
                     }
                 }
@@ -66,17 +66,23 @@ struct BattleView: View {
                 HStack {
                     VStack {
                         Text("こめ")
-                            .font(.custom("DragonQuestFC", size: 65))
+                            .font(.custom("DragonQuestFC", size: 55))
                             .foregroundColor(.white)
                         Text("たまご")
-                            .font(.custom("DragonQuestFC", size: 65))
+                            .font(.custom("DragonQuestFC", size: 55))
                             .foregroundColor(.white)
                         Text("さかな")
-                            .font(.custom("DragonQuestFC", size: 65))
+                            .font(.custom("DragonQuestFC", size: 55))
                             .foregroundColor(.white)
                         Text("やさい")
-                            .font(.custom("DragonQuestFC", size: 65))
+                            .font(.custom("DragonQuestFC", size: 55))
                             .foregroundColor(.white)
+                        Spacer()
+                        Button(action: {self.meshiqueViewModel.startFlag = false}){
+                            Text("リタイア")
+                                .font(.custom("DragonQuestFC", size: 50))
+                                .foregroundColor(.white)
+                        }
                         Spacer()
                     }
                     .frame(width:200, height: 300)

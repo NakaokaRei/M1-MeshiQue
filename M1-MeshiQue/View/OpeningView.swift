@@ -9,13 +9,16 @@
 import SwiftUI
 
 struct OpeningView: View {
-    @Binding var startFlag: Bool
+    @EnvironmentObject var meshiqueViewModel: MeshiQueViewModel
     var body: some View {
         VStack {
             Text("メシクエ")
                 .font(.custom("DragonQuestFC", size: 350))
             Spacer()
-            Button(action: {self.startFlag.toggle()}){
+            Button(action: {
+                self.meshiqueViewModel.startFlag = true
+                self.meshiqueViewModel.enemeySetUp()
+            }){
                 Text("スタート")
                     .font(.custom("DragonQuestFC", size: 100))
             }
@@ -26,6 +29,6 @@ struct OpeningView: View {
 
 struct OpeningView_Previews: PreviewProvider {
     static var previews: some View {
-        OpeningView(startFlag: .constant(true)).previewLayout(.fixed(width: 1080, height: 810))
+        OpeningView().previewLayout(.fixed(width: 1080, height: 810)).environmentObject(MeshiQueViewModel())
     }
 }

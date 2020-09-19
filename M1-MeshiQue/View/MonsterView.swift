@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MonsterView: View {
-    var monster: Enemy = Enemy()
+    var monster: Monster = Monster()
     var hpValue: Int = 50
     var body: some View {
         VStack {
