@@ -26,18 +26,18 @@ class MeshiQueViewModel: ObservableObject {
     }
     
     func heroAttak(selectedSkill: Int){
-        let damage = hero.attack(selecedSkill: selectedSkill)
-        if monsterList[selectedMonster].hpValue >= damage {
-            monsterList[selectedMonster].hpValue -= damage
-            self.objectWillChange.send()
+        let damage_hero = hero.attack(selecedSkill: selectedSkill)
+        if monsterList[selectedMonster].hpValue >= damage_hero {
+            monsterList[selectedMonster].hpValue -= damage_hero
             if monsterList[selectedMonster].hpValue == 0 {
                 monsterList[selectedMonster].name = "batsu"
             }
-        } else if monsterList[selectedMonster].hpValue < damage {
             self.objectWillChange.send()
+        } else if monsterList[selectedMonster].hpValue < damage_hero {
             monsterList[selectedMonster].hpValue = 0
             monsterList[selectedMonster].name = "batsu"
+            self.objectWillChange.send()
         }
+        
     }
-    
 }

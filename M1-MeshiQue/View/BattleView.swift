@@ -86,6 +86,7 @@ struct BattleView: View {
                             Text("リタイア")
                                 .font(.custom("DragonQuestFC", size: 50))
                                 .foregroundColor(.white)
+                                .offset(y: -7)
                         }
                         Spacer()
                     }
@@ -97,8 +98,14 @@ struct BattleView: View {
                             .cornerRadius(5))
                     .frame(width:200, height: 300)
                     VStack{
-                        HeroGaugeView(value: meshiqueViewModel.hero.hpValue)
-                            .offset(x: -230, y: -60)
+                        HStack {
+                            Text("たいりょく")
+                                .font(.custom("DragonQuestFC", size: 35))
+                                .foregroundColor(.white)
+                                .offset(y: -8)
+                            HeroGaugeView(value: meshiqueViewModel.hero.hpValue)
+                        }
+                            .offset(x: -190, y: -60)
                         Text("てきがこうげきしてきた")
                             .font(.custom("DragonQuestFC", size: 80))
                             .foregroundColor(.white)
