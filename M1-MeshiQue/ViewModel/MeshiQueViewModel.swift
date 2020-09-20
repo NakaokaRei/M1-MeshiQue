@@ -35,7 +35,9 @@ class MeshiQueViewModel: ObservableObject {
         }
         
         socket.on("from_chopstick") { data, ack in
-            print(data)
+            //debug
+            //print(type(of: data[0] as! Int))
+            self.heroAttak(selectedSkill: data[0] as! Int)
         }
         socket.connect()
     }
