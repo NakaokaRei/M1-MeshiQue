@@ -26,6 +26,6 @@ struct GaugeView: View {
 
 struct GaugeView_Previews: PreviewProvider {
     static var previews: some View {
-        GaugeView(value: .constant(100))
+        GaugeView(value: .constant(50))
     }
 }

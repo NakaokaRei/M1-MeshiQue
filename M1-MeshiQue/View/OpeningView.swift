@@ -14,11 +14,15 @@ struct OpeningView: View {
         VStack {
             Text("メシクエ")
                 .font(.custom("DragonQuestFC", size: 350))
-            Spacer()
-            Button(action: {
-                self.meshiqueViewModel.startFlag = true
-                self.meshiqueViewModel.enemeySetUp()
-            }){
+                .offset(y: -80)
+
+            TextField("IPアドレスを入力してね", text: $meshiqueViewModel.ipAddress)
+                .frame(width: 200,  height: 50)
+                .textFieldStyle(
+                    RoundedBorderTextFieldStyle())
+                .offset(y: -100)
+            
+            Button(action: {self.meshiqueViewModel.start()}){
                 Text("スタート")
                     .font(.custom("DragonQuestFC", size: 100))
             }

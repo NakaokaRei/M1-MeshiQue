@@ -8,12 +8,37 @@
 
 import Foundation
 import Combine
+import SocketIO
 
 class MeshiQueViewModel: ObservableObject {
     @Published var monsterList: [Monster] = [Monster(), Monster(), Monster()]
     @Published var startFlag: Bool = false
     @Published var selectedMonster: Int = 0
     @Published var hero: Hero = Hero()
+    
+    var manager: SocketManager!
+    var socket: SocketIOClient!
+    var ipAddress: String = "163.221.128.44:5000"
+    
+    func start(){
+        startFlag = true
+        enemeySetUp()
+        connect()
+    }
+    
+    func connect(){
+        manager = SocketManager(socketURL: URL(string: "http://" + ipAddress)!, config: [.log(true), .compress])
+        socket = manager.defaultSocket
+        
+        socket.on(clientEvent: .connect) { data, ack in
+            print("connect")
+        }
+        
+        socket.on("from_chopstick") { data, ack in
+            print(data)
+        }
+        socket.connect()
+    }
     
     func enemeySetUp(){
         monsterList = []
@@ -38,6 +63,5 @@ class MeshiQueViewModel: ObservableObject {
             monsterList[selectedMonster].name = "batsu"
             self.objectWillChange.send()
         }
-        
     }
 }
