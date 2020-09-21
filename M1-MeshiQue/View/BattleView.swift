@@ -82,7 +82,9 @@ struct BattleView: View {
                                 .foregroundColor(.white)
                         }
                         Spacer()
-                        Button(action: {self.meshiqueViewModel.startFlag = false}){
+                        Button(action: {self.meshiqueViewModel.startFlag = false
+                                        self.meshiqueViewModel.sePlaySound(name: "se_escape")
+                                        self.meshiqueViewModel.bgmPlaySound(name: "bgm_opening")}){
                             Text("リタイア")
                                 .font(.custom("DragonQuestFC", size: 50))
                                 .foregroundColor(.white)
@@ -126,12 +128,14 @@ struct BattleView: View {
                     return Alert(title: Text("ゲームオーバー"),
                                  message: Text("スタート画面に戻ります"),
                                  dismissButton: .default(Text("わかりました"),
-                                                         action: {self.meshiqueViewModel.startFlag = false}))
+                                                         action: {self.meshiqueViewModel.startFlag = false
+                                                                  self.meshiqueViewModel.bgmPlaySound(name: "bgm_opening")}))
                 case "clear":
                     return Alert(title: Text("ゲームクリア！！"),
                                  message: Text("スタート画面に戻ります"),
                                  dismissButton: .default(Text("わかりました"),
-                                                         action: {self.meshiqueViewModel.startFlag = false}))
+                                                         action: {self.meshiqueViewModel.startFlag = false
+                                                                  self.meshiqueViewModel.bgmPlaySound(name: "bgm_opening")}))
                 default:
                     return Alert(title: Text("Error"))
             }

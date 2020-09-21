@@ -9,8 +9,9 @@
 import Foundation
 import Combine
 import SocketIO
+import AVFoundation
 
-class MeshiQueViewModel: ObservableObject {
+class MeshiQueViewModel: NSObject, ObservableObject {
     @Published var monsterList: [Monster] = [Monster(), Monster(), Monster()]
     @Published var startFlag: Bool = false
     @Published var selectedMonster: Int = 0
@@ -19,12 +20,20 @@ class MeshiQueViewModel: ObservableObject {
     
     var manager: SocketManager!
     var socket: SocketIOClient!
+    var bgmPlayer: AVAudioPlayer!
+    var sePlayer: AVAudioPlayer!
     var ipAddress: String = "163.221.128.44:5000"
     var underAttack: Bool = false
     var clearOrOver: String = ""
     
+    override init() {
+        super.init()
+        bgmPlaySound(name: "bgm_opening")
+    }
+    
     func start(){
         startFlag = true
+        bgmPlaySound(name: "bgm_battle1")
         enemeySetUp()
         heroSetUp()
         connect()
@@ -63,6 +72,7 @@ class MeshiQueViewModel: ObservableObject {
     func heroAttak(selectedSkill: Int){
         if !underAttack && hero.hpValue > 0 {
             underAttack = true
+            self.sePlaySound(name: "se_heroAttack")
             let damage_hero = hero.attack(selecedSkill: selectedSkill)
             if monsterList[selectedMonster].hpValue >= damage_hero {
                 monsterList[selectedMonster].hpValue -= damage_hero
@@ -77,6 +87,7 @@ class MeshiQueViewModel: ObservableObject {
             }
             if monsterList[0].hpValue==0 && monsterList[1].hpValue==0 && monsterList[2].hpValue==0 {
                 clearOrOver = "clear"
+                bgmPlaySound(name: "bgm_gameclear")
                 showAlert = true
             }
             monsterAttack()
@@ -87,9 +98,10 @@ class MeshiQueViewModel: ObservableObject {
     func monsterAttack(){
         DispatchQueue.global().async {
             for monster in self.monsterList {
-                Thread.sleep(forTimeInterval: 0.5)
-                DispatchQueue.main.async() {
-                    if monster.hpValue != 0 {
+                if monster.hpValue != 0 {
+                    Thread.sleep(forTimeInterval: 0.5)
+                    DispatchQueue.main.async() {
+                        self.sePlaySound(name: "se_monsterAttack")
                         let damage_monster = monster.attack()
                         if self.hero.hpValue >= damage_monster {
                             self.hero.hpValue -= damage_monster
@@ -97,6 +109,7 @@ class MeshiQueViewModel: ObservableObject {
                         } else if self.hero.hpValue < damage_monster {
                             self.hero.hpValue = 0
                             self.clearOrOver = "over"
+                            self.bgmPlaySound(name: "bgm_gameover")
                             self.showAlert = true
                             self.objectWillChange.send()
                         }
@@ -104,6 +117,46 @@ class MeshiQueViewModel: ObservableObject {
                 }
             }
             self.underAttack = false
+        }
+    }
+}
+
+extension MeshiQueViewModel: AVAudioPlayerDelegate {
+    func bgmPlaySound(name: String, loopNum: Int = -1) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        do {
+            // AVAudioPlayerのインスタンス化
+            bgmPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            // AVAudioPlayerのデリゲートをセット
+            bgmPlayer.delegate = self
+            // 音声の再生
+            bgmPlayer.volume = 0.5
+            bgmPlayer.numberOfLoops = loopNum
+            bgmPlayer.play()
+        } catch {
+            print("Error")
+        }
+    }
+    
+    func sePlaySound(name: String, loopNum: Int = 1) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        do {
+            // AVAudioPlayerのインスタンス化
+            sePlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            // AVAudioPlayerのデリゲートをセット
+            sePlayer.delegate = self
+            // 音声の再生
+            sePlayer.volume = 1.0
+            sePlayer.numberOfLoops = loopNum
+            sePlayer.play()
+        } catch {
+            print("Error")
         }
     }
 }

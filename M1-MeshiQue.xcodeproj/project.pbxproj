@@ -22,6 +22,13 @@
 		B190BA5925112C8300077FDA /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA5825112C8300077FDA /* OpeningView.swift */; };
 		B1C615CA2516572200BDA779 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C615C92516572200BDA779 /* Helper.swift */; };
 		B1C615CC251659A800BDA779 /* MonsterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C615CB251659A800BDA779 /* MonsterModel.swift */; };
+		B1C615CF2518B77200BDA779 /* bgm_opening.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B1C615CE2518B77200BDA779 /* bgm_opening.mp3 */; };
+		B1C615D12518D98300BDA779 /* se_heroAttack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B1C615D02518D98300BDA779 /* se_heroAttack.mp3 */; };
+		B1C615D32518D98B00BDA779 /* se_escape.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B1C615D22518D98B00BDA779 /* se_escape.mp3 */; };
+		B1C615D52518D99900BDA779 /* se_monsterAttack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B1C615D42518D99900BDA779 /* se_monsterAttack.mp3 */; };
+		B1C615D72518DE6400BDA779 /* bgm_battle1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B1C615D62518DE6400BDA779 /* bgm_battle1.mp3 */; };
+		B1C615D92518E03600BDA779 /* bgm_gameover.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B1C615D82518E03600BDA779 /* bgm_gameover.mp3 */; };
+		B1C615DB2518E15D00BDA779 /* bgm_gameclear.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B1C615DA2518E15D00BDA779 /* bgm_gameclear.mp3 */; };
 		B1E5C0082510FF9A001A4679 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5C0072510FF9A001A4679 /* BattleView.swift */; };
 		B1E5C00B2511111C001A4679 /* DragonQuestFC.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E5C00A2511111C001A4679 /* DragonQuestFC.ttf */; };
 /* End PBXBuildFile section */
@@ -46,6 +53,13 @@
 		B190BA5825112C8300077FDA /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
 		B1C615C92516572200BDA779 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		B1C615CB251659A800BDA779 /* MonsterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterModel.swift; sourceTree = "<group>"; };
+		B1C615CE2518B77200BDA779 /* bgm_opening.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_opening.mp3; sourceTree = "<group>"; };
+		B1C615D02518D98300BDA779 /* se_heroAttack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = se_heroAttack.mp3; sourceTree = "<group>"; };
+		B1C615D22518D98B00BDA779 /* se_escape.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = se_escape.mp3; sourceTree = "<group>"; };
+		B1C615D42518D99900BDA779 /* se_monsterAttack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = se_monsterAttack.mp3; sourceTree = "<group>"; };
+		B1C615D62518DE6400BDA779 /* bgm_battle1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_battle1.mp3; sourceTree = "<group>"; };
+		B1C615D82518E03600BDA779 /* bgm_gameover.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_gameover.mp3; sourceTree = "<group>"; };
+		B1C615DA2518E15D00BDA779 /* bgm_gameclear.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_gameclear.mp3; sourceTree = "<group>"; };
 		B1E5C0072510FF9A001A4679 /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
 		B1E5C00A2511111C001A4679 /* DragonQuestFC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DragonQuestFC.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +114,7 @@
 		B15386F32508B80100FE3845 /* M1-MeshiQue */ = {
 			isa = PBXGroup;
 			children = (
+				B1C615CD2518B73500BDA779 /* sounds */,
 				B1E5C009251110F5001A4679 /* fonts */,
 				B17431202516403D001BFC27 /* Model */,
 				B174311D25163E7A001BFC27 /* ViewModel */,
@@ -151,6 +166,20 @@
 				B190BA5825112C8300077FDA /* OpeningView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B1C615CD2518B73500BDA779 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B1C615D62518DE6400BDA779 /* bgm_battle1.mp3 */,
+				B1C615CE2518B77200BDA779 /* bgm_opening.mp3 */,
+				B1C615DA2518E15D00BDA779 /* bgm_gameclear.mp3 */,
+				B1C615D82518E03600BDA779 /* bgm_gameover.mp3 */,
+				B1C615D02518D98300BDA779 /* se_heroAttack.mp3 */,
+				B1C615D22518D98B00BDA779 /* se_escape.mp3 */,
+				B1C615D42518D99900BDA779 /* se_monsterAttack.mp3 */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 		B1E5C009251110F5001A4679 /* fonts */ = {
@@ -221,8 +250,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C615D12518D98300BDA779 /* se_heroAttack.mp3 in Resources */,
+				B1C615D52518D99900BDA779 /* se_monsterAttack.mp3 in Resources */,
 				B15387012508B80200FE3845 /* LaunchScreen.storyboard in Resources */,
+				B1C615DB2518E15D00BDA779 /* bgm_gameclear.mp3 in Resources */,
+				B1C615D32518D98B00BDA779 /* se_escape.mp3 in Resources */,
+				B1C615D72518DE6400BDA779 /* bgm_battle1.mp3 in Resources */,
+				B1C615D92518E03600BDA779 /* bgm_gameover.mp3 in Resources */,
 				B15386FE2508B80200FE3845 /* Preview Assets.xcassets in Resources */,
+				B1C615CF2518B77200BDA779 /* bgm_opening.mp3 in Resources */,
 				B15386FB2508B80200FE3845 /* Assets.xcassets in Resources */,
 				B1E5C00B2511111C001A4679 /* DragonQuestFC.ttf in Resources */,
 			);
