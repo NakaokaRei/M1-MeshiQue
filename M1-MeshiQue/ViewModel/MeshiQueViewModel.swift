@@ -15,11 +15,13 @@ class MeshiQueViewModel: ObservableObject {
     @Published var startFlag: Bool = false
     @Published var selectedMonster: Int = 0
     @Published var hero: Hero = Hero()
+    @Published var showAlert: Bool = false
     
     var manager: SocketManager!
     var socket: SocketIOClient!
     var ipAddress: String = "163.221.128.44:5000"
     var underAttack: Bool = false
+    var clearOrOver: String = ""
     
     func start(){
         startFlag = true
@@ -57,6 +59,7 @@ class MeshiQueViewModel: ObservableObject {
         hero = Hero()
     }
     
+    // 主人公側の攻撃
     func heroAttak(selectedSkill: Int){
         if !underAttack && hero.hpValue > 0 {
             underAttack = true
@@ -72,10 +75,15 @@ class MeshiQueViewModel: ObservableObject {
                 monsterList[selectedMonster].name = "batsu"
                 self.objectWillChange.send()
             }
+            if monsterList[0].hpValue==0 && monsterList[1].hpValue==0 && monsterList[2].hpValue==0 {
+                clearOrOver = "clear"
+                showAlert = true
+            }
             monsterAttack()
         }
     }
         
+    // モンスターからの攻撃
     func monsterAttack(){
         DispatchQueue.global().async {
             for monster in self.monsterList {
@@ -88,6 +96,8 @@ class MeshiQueViewModel: ObservableObject {
                             self.objectWillChange.send()
                         } else if self.hero.hpValue < damage_monster {
                             self.hero.hpValue = 0
+                            self.clearOrOver = "over"
+                            self.showAlert = true
                             self.objectWillChange.send()
                         }
                     }
@@ -97,4 +107,3 @@ class MeshiQueViewModel: ObservableObject {
         }
     }
 }
-

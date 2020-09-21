@@ -120,6 +120,22 @@ struct BattleView: View {
                 .padding(15)
             }
         }
+        .alert(isPresented: $meshiqueViewModel.showAlert){
+            switch(meshiqueViewModel.clearOrOver){
+                case "over":
+                    return Alert(title: Text("ゲームオーバー"),
+                                 message: Text("スタート画面に戻ります"),
+                                 dismissButton: .default(Text("わかりました"),
+                                                         action: {self.meshiqueViewModel.startFlag = false}))
+                case "clear":
+                    return Alert(title: Text("ゲームクリア！！"),
+                                 message: Text("スタート画面に戻ります"),
+                                 dismissButton: .default(Text("わかりました"),
+                                                         action: {self.meshiqueViewModel.startFlag = false}))
+                default:
+                    return Alert(title: Text("Error"))
+            }
+        }
     }
 }
 
