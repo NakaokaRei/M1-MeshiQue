@@ -19,10 +19,12 @@ class MeshiQueViewModel: ObservableObject {
     var manager: SocketManager!
     var socket: SocketIOClient!
     var ipAddress: String = "163.221.128.44:5000"
+    var underAttack: Bool = false
     
     func start(){
         startFlag = true
         enemeySetUp()
+        heroSetUp()
         connect()
     }
     
@@ -51,18 +53,48 @@ class MeshiQueViewModel: ObservableObject {
         self.monsterList.append(Monster(name: name3))
     }
     
+    func heroSetUp(){
+        hero = Hero()
+    }
+    
     func heroAttak(selectedSkill: Int){
-        let damage_hero = hero.attack(selecedSkill: selectedSkill)
-        if monsterList[selectedMonster].hpValue >= damage_hero {
-            monsterList[selectedMonster].hpValue -= damage_hero
-            if monsterList[selectedMonster].hpValue == 0 {
+        if !underAttack && hero.hpValue > 0 {
+            underAttack = true
+            let damage_hero = hero.attack(selecedSkill: selectedSkill)
+            if monsterList[selectedMonster].hpValue >= damage_hero {
+                monsterList[selectedMonster].hpValue -= damage_hero
+                if monsterList[selectedMonster].hpValue == 0 {
+                    monsterList[selectedMonster].name = "batsu"
+                }
+                self.objectWillChange.send()
+            } else if monsterList[selectedMonster].hpValue < damage_hero {
+                monsterList[selectedMonster].hpValue = 0
                 monsterList[selectedMonster].name = "batsu"
+                self.objectWillChange.send()
             }
-            self.objectWillChange.send()
-        } else if monsterList[selectedMonster].hpValue < damage_hero {
-            monsterList[selectedMonster].hpValue = 0
-            monsterList[selectedMonster].name = "batsu"
-            self.objectWillChange.send()
+            monsterAttack()
+        }
+    }
+        
+    func monsterAttack(){
+        DispatchQueue.global().async {
+            for monster in self.monsterList {
+                Thread.sleep(forTimeInterval: 0.5)
+                DispatchQueue.main.async() {
+                    if monster.hpValue != 0 {
+                        let damage_monster = monster.attack()
+                        if self.hero.hpValue >= damage_monster {
+                            self.hero.hpValue -= damage_monster
+                            self.objectWillChange.send()
+                        } else if self.hero.hpValue < damage_monster {
+                            self.hero.hpValue = 0
+                            self.objectWillChange.send()
+                        }
+                    }
+                }
+            }
+            self.underAttack = false
         }
     }
 }
+

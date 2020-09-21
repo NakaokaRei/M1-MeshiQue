@@ -11,7 +11,7 @@ import Foundation
 class Monster {
     var hpValue: Int
     var name: String
-    var skills: [Int] = [30, 50, 70]
+    var skills: [Int] = [10, 20, 30]
     
     init(hpValue: Int = 100, name: String = "monster01"){
         self.hpValue = hpValue
