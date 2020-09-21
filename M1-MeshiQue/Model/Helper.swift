@@ -9,3 +9,4 @@
 import Foundation
 
 let monster_img_list = ["monster01", "monster02", "monster03", "monster04", "monster05", "monster06"]
+let skill_list = ["ごはんこうげき！", "たまごこうげき！", "さかなこうげき！", "やさいこうげき！"]

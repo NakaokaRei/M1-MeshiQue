@@ -17,6 +17,7 @@ class MeshiQueViewModel: NSObject, ObservableObject {
     @Published var selectedMonster: Int = 0
     @Published var hero: Hero = Hero()
     @Published var showAlert: Bool = false
+    @Published var message: String = "てきがあらわれた"
     
     var manager: SocketManager!
     var socket: SocketIOClient!
@@ -72,6 +73,7 @@ class MeshiQueViewModel: NSObject, ObservableObject {
     func heroAttak(selectedSkill: Int){
         if !underAttack && hero.hpValue > 0 {
             underAttack = true
+            message = skill_list[selectedSkill]
             self.sePlaySound(name: "se_heroAttack")
             let damage_hero = hero.attack(selecedSkill: selectedSkill)
             if monsterList[selectedMonster].hpValue >= damage_hero {
@@ -99,10 +101,11 @@ class MeshiQueViewModel: NSObject, ObservableObject {
         DispatchQueue.global().async {
             for monster in self.monsterList {
                 if monster.hpValue != 0 {
-                    Thread.sleep(forTimeInterval: 0.5)
+                    Thread.sleep(forTimeInterval: 0.7)
                     DispatchQueue.main.async() {
                         self.sePlaySound(name: "se_monsterAttack")
                         let damage_monster = monster.attack()
+                        self.message = "ダメージをうけた！！"
                         if self.hero.hpValue >= damage_monster {
                             self.hero.hpValue -= damage_monster
                             self.objectWillChange.send()
