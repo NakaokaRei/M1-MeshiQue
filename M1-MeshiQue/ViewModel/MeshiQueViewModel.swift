@@ -40,6 +40,17 @@ class MeshiQueViewModel: NSObject, ObservableObject {
         connect()
     }
     
+    func escape(){
+        if [true, false].randomElement()!{
+            startFlag = false
+            sePlaySound(name: "se_escape")
+            bgmPlaySound(name: "bgm_opening")
+        } else {
+            message = "にげれなかった！！"
+            monsterAttack()
+        }
+    }
+    
     func connect(){
         manager = SocketManager(socketURL: URL(string: "http://" + ipAddress)!, config: [.log(true), .compress])
         socket = manager.defaultSocket

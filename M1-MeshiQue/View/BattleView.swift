@@ -82,10 +82,8 @@ struct BattleView: View {
                                 .foregroundColor(.white)
                         }
                         Spacer()
-                        Button(action: {self.meshiqueViewModel.startFlag = false
-                                        self.meshiqueViewModel.sePlaySound(name: "se_escape")
-                                        self.meshiqueViewModel.bgmPlaySound(name: "bgm_opening")}){
-                            Text("リタイア")
+                        Button(action: {self.meshiqueViewModel.escape()}){
+                            Text("にげる")
                                 .font(.custom("DragonQuestFC", size: 50))
                                 .foregroundColor(.white)
                                 .offset(y: -7)
