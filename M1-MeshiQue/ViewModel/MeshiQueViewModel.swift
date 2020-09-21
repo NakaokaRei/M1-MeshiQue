@@ -41,11 +41,12 @@ class MeshiQueViewModel: NSObject, ObservableObject {
     }
     
     func escape(){
-        if [true, false].randomElement()!{
+        if [true, false].randomElement()! && !underAttack{
             startFlag = false
             sePlaySound(name: "se_escape")
             bgmPlaySound(name: "bgm_opening")
-        } else {
+        } else if !underAttack {
+            underAttack = true
             message = "にげれなかった！！"
             monsterAttack()
         }
