@@ -10,7 +10,7 @@ import Foundation
 
 class Hero {
     var hpValue: Int
-    var skills: [Int] = [10 ,30, 50, 70]
+    var skills: [Int] = [40, 45, 50, 60]
     
     init(hpValue: Int = 300){
         self.hpValue = hpValue

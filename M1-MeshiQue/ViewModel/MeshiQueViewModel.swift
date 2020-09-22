@@ -26,21 +26,24 @@ class MeshiQueViewModel: NSObject, ObservableObject {
     var ipAddress: String = "163.221.128.44:5000"
     var underAttack: Bool = false
     var clearOrOver: String = ""
+    var previousAttak: Int!
+    var continuousNum: Int = 0
     
     override init() {
         super.init()
         bgmPlaySound(name: "bgm_opening")
     }
     
-    func start(){
+    func start() {
         startFlag = true
+        previousAttak = nil
         bgmPlaySound(name: "bgm_battle1")
         enemeySetUp()
         heroSetUp()
         connect()
     }
     
-    func escape(){
+    func escape() {
         if [true, false].randomElement()! && !underAttack{
             startFlag = false
             sePlaySound(name: "se_escape")
@@ -52,7 +55,7 @@ class MeshiQueViewModel: NSObject, ObservableObject {
         }
     }
     
-    func connect(){
+    func connect() {
         manager = SocketManager(socketURL: URL(string: "http://" + ipAddress)!, config: [.log(true), .compress])
         socket = manager.defaultSocket
         
@@ -67,7 +70,7 @@ class MeshiQueViewModel: NSObject, ObservableObject {
         socket.connect()
     }
     
-    func enemeySetUp(){
+    func enemeySetUp() {
         monsterList = []
         let name1 = monster_img_list.randomElement()!
         let name2 = monster_img_list.randomElement()!
@@ -77,7 +80,7 @@ class MeshiQueViewModel: NSObject, ObservableObject {
         self.monsterList.append(Monster(name: name3))
     }
     
-    func heroSetUp(){
+    func heroSetUp() {
         hero = Hero()
     }
     
@@ -87,7 +90,14 @@ class MeshiQueViewModel: NSObject, ObservableObject {
             underAttack = true
             message = skill_list[selectedSkill]
             self.sePlaySound(name: "se_heroAttack")
-            let damage_hero = hero.attack(selecedSkill: selectedSkill)
+            var damage_hero = hero.attack(selecedSkill: selectedSkill)
+            // 連続して食べるとダメージが減っていく
+            if previousAttak == selectedSkill {
+                continuousNum += 1
+                damage_hero /= 2*continuousNum
+            } else {
+                continuousNum = 0
+            }
             if monsterList[selectedMonster].hpValue >= damage_hero {
                 monsterList[selectedMonster].hpValue -= damage_hero
                 if monsterList[selectedMonster].hpValue == 0 {
@@ -104,12 +114,13 @@ class MeshiQueViewModel: NSObject, ObservableObject {
                 bgmPlaySound(name: "bgm_gameclear")
                 showAlert = true
             }
+            previousAttak = selectedSkill
             monsterAttack()
         }
     }
         
     // モンスターからの攻撃
-    func monsterAttack(){
+    func monsterAttack() {
         DispatchQueue.global().async {
             for monster in self.monsterList {
                 if monster.hpValue != 0 {

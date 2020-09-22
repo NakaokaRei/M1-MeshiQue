@@ -62,24 +62,48 @@ struct BattleView: View {
                 HStack {
                     VStack {
                         Button(action: {self.meshiqueViewModel.heroAttak(selectedSkill: 0)}){
-                            Text("こめ")
+                            if self.meshiqueViewModel.previousAttak == 0 {
+                                Text("こめ")
+                                .font(.custom("DragonQuestFC", size: 55))
+                                .foregroundColor(.red)
+                            } else {
+                                Text("こめ")
                                 .font(.custom("DragonQuestFC", size: 55))
                                 .foregroundColor(.white)
+                            }
                         }
                         Button(action: {self.meshiqueViewModel.heroAttak(selectedSkill: 1)}){
-                            Text("たまご")
+                            if self.meshiqueViewModel.previousAttak == 1 {
+                                Text("たまご")
+                                .font(.custom("DragonQuestFC", size: 55))
+                                .foregroundColor(.red)
+                            } else {
+                                Text("たまご")
                                 .font(.custom("DragonQuestFC", size: 55))
                                 .foregroundColor(.white)
+                            }
                         }
                         Button(action: {self.meshiqueViewModel.heroAttak(selectedSkill: 2)}){
-                            Text("さかな")
+                            if self.meshiqueViewModel.previousAttak == 2 {
+                                Text("さかな")
+                                .font(.custom("DragonQuestFC", size: 55))
+                                .foregroundColor(.red)
+                            } else {
+                                Text("さかな")
                                 .font(.custom("DragonQuestFC", size: 55))
                                 .foregroundColor(.white)
+                            }
                         }
                         Button(action: {self.meshiqueViewModel.heroAttak(selectedSkill: 3)}){
-                            Text("やさい")
+                            if self.meshiqueViewModel.previousAttak == 3 {
+                                Text("やさい")
+                                .font(.custom("DragonQuestFC", size: 55))
+                                .foregroundColor(.red)
+                            } else {
+                                Text("やさい")
                                 .font(.custom("DragonQuestFC", size: 55))
                                 .foregroundColor(.white)
+                            }
                         }
                         Spacer()
                         Button(action: {self.meshiqueViewModel.escape()}){
