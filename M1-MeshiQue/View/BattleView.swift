@@ -9,12 +9,11 @@
 import SwiftUI
 
 struct BattleView: View {
-    var back_img_name: String = "background"
     @EnvironmentObject var meshiqueViewModel: MeshiQueViewModel
     
     var body: some View {
         ZStack{
-            Image(back_img_name)
+            Image(meshiqueViewModel.backgroundImgName)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 1080, height: 810)
@@ -158,6 +157,11 @@ struct BattleView: View {
                                  dismissButton: .default(Text("わかりました"),
                                                          action: {self.meshiqueViewModel.startFlag = false
                                                                   self.meshiqueViewModel.bgmPlaySound(name: "bgm_opening")}))
+                case "next":
+                    return Alert(title: Text("次はボス戦です！！"),
+                                 message: Text("準備はできましたか？？"),
+                                 dismissButton: .default(Text("できました"),
+                                                         action: {self.meshiqueViewModel.nextStage()}))
                 default:
                     return Alert(title: Text("Error"))
             }

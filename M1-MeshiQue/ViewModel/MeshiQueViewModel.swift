@@ -17,7 +17,8 @@ class MeshiQueViewModel: NSObject, ObservableObject {
     @Published var selectedMonster: Int = 0
     @Published var hero: Hero = Hero()
     @Published var showAlert: Bool = false
-    @Published var message: String = "てきがあらわれた"
+    @Published var message: String!
+    @Published var backgroundImgName: String!
     
     var manager: SocketManager!
     var socket: SocketIOClient!
@@ -25,9 +26,10 @@ class MeshiQueViewModel: NSObject, ObservableObject {
     var sePlayer: AVAudioPlayer!
     var ipAddress: String = "163.221.128.44:5000"
     var underAttack: Bool = false
-    var clearOrOver: String = ""
+    var clearOrOver: String!
     var previousAttak: Int!
     var continuousNum: Int = 0
+    var nowStage: Int = 1
     
     override init() {
         super.init()
@@ -37,14 +39,27 @@ class MeshiQueViewModel: NSObject, ObservableObject {
     func start() {
         startFlag = true
         previousAttak = nil
+        nowStage = 1
+        message = "てきがあらわれた！！"
+        backgroundImgName = "background"
         bgmPlaySound(name: "bgm_battle1")
-        enemeySetUp()
+        enemeySetUp1()
         heroSetUp()
         connect()
     }
     
+    func nextStage() {
+        previousAttak = nil
+        nowStage = 2
+        message = "ボスをたおせ！！"
+        backgroundImgName = "bossbackground"
+        bgmPlaySound(name: "bgm_battle2")
+        enemeySetUp2()
+        heroSetUp()
+    }
+    
     func escape() {
-        if [true, false].randomElement()! && !underAttack{
+        if [true, false].randomElement()! && !underAttack {
             startFlag = false
             sePlaySound(name: "se_escape")
             bgmPlaySound(name: "bgm_opening")
@@ -70,10 +85,20 @@ class MeshiQueViewModel: NSObject, ObservableObject {
         socket.connect()
     }
     
-    func enemeySetUp() {
+    func enemeySetUp1() {
         monsterList = []
         let name1 = monster_img_list.randomElement()!
         let name2 = monster_img_list.randomElement()!
+        let name3 = monster_img_list.randomElement()!
+        self.monsterList.append(Monster(name: name1))
+        self.monsterList.append(Monster(name: name2))
+        self.monsterList.append(Monster(name: name3))
+    }
+    
+    func enemeySetUp2() {
+        monsterList = []
+        let name1 = monster_img_list.randomElement()!
+        let name2 = "boss"
         let name3 = monster_img_list.randomElement()!
         self.monsterList.append(Monster(name: name1))
         self.monsterList.append(Monster(name: name2))
@@ -109,12 +134,18 @@ class MeshiQueViewModel: NSObject, ObservableObject {
                 monsterList[selectedMonster].name = "batsu"
                 self.objectWillChange.send()
             }
-            if monsterList[0].hpValue==0 && monsterList[1].hpValue==0 && monsterList[2].hpValue==0 {
-                clearOrOver = "clear"
-                bgmPlaySound(name: "bgm_gameclear")
-                showAlert = true
-            }
             previousAttak = selectedSkill
+            if monsterList[0].hpValue==0 && monsterList[1].hpValue==0 && monsterList[2].hpValue==0 {
+                if nowStage == 1 {
+                    clearOrOver = "next"
+                    bgmPlaySound(name: "bgm_nextstage")
+                    showAlert = true
+                } else if nowStage == 2 {
+                    clearOrOver = "clear"
+                    bgmPlaySound(name: "bgm_gameclear")
+                    showAlert = true
+                }
+            }
             monsterAttack()
         }
     }

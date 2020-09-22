@@ -31,6 +31,8 @@
 		B1C615DB2518E15D00BDA779 /* bgm_gameclear.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B1C615DA2518E15D00BDA779 /* bgm_gameclear.mp3 */; };
 		B1E5C0082510FF9A001A4679 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5C0072510FF9A001A4679 /* BattleView.swift */; };
 		B1E5C00B2511111C001A4679 /* DragonQuestFC.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E5C00A2511111C001A4679 /* DragonQuestFC.ttf */; };
+		B1F23FCF2519ED7400A4E4AF /* bgm_battle2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B1F23FCE2519ED7400A4E4AF /* bgm_battle2.mp3 */; };
+		B1F23FD12519F1DB00A4E4AF /* bgm_nextstage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B1F23FD02519F1DB00A4E4AF /* bgm_nextstage.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		B1C615DA2518E15D00BDA779 /* bgm_gameclear.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_gameclear.mp3; sourceTree = "<group>"; };
 		B1E5C0072510FF9A001A4679 /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
 		B1E5C00A2511111C001A4679 /* DragonQuestFC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DragonQuestFC.ttf; sourceTree = "<group>"; };
+		B1F23FCE2519ED7400A4E4AF /* bgm_battle2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_battle2.mp3; sourceTree = "<group>"; };
+		B1F23FD02519F1DB00A4E4AF /* bgm_nextstage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_nextstage.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,9 +176,11 @@
 			isa = PBXGroup;
 			children = (
 				B1C615D62518DE6400BDA779 /* bgm_battle1.mp3 */,
+				B1F23FCE2519ED7400A4E4AF /* bgm_battle2.mp3 */,
 				B1C615CE2518B77200BDA779 /* bgm_opening.mp3 */,
 				B1C615DA2518E15D00BDA779 /* bgm_gameclear.mp3 */,
 				B1C615D82518E03600BDA779 /* bgm_gameover.mp3 */,
+				B1F23FD02519F1DB00A4E4AF /* bgm_nextstage.mp3 */,
 				B1C615D02518D98300BDA779 /* se_heroAttack.mp3 */,
 				B1C615D22518D98B00BDA779 /* se_escape.mp3 */,
 				B1C615D42518D99900BDA779 /* se_monsterAttack.mp3 */,
@@ -254,6 +260,8 @@
 				B1C615D52518D99900BDA779 /* se_monsterAttack.mp3 in Resources */,
 				B15387012508B80200FE3845 /* LaunchScreen.storyboard in Resources */,
 				B1C615DB2518E15D00BDA779 /* bgm_gameclear.mp3 in Resources */,
+				B1F23FD12519F1DB00A4E4AF /* bgm_nextstage.mp3 in Resources */,
+				B1F23FCF2519ED7400A4E4AF /* bgm_battle2.mp3 in Resources */,
 				B1C615D32518D98B00BDA779 /* se_escape.mp3 in Resources */,
 				B1C615D72518DE6400BDA779 /* bgm_battle1.mp3 in Resources */,
 				B1C615D92518E03600BDA779 /* bgm_gameover.mp3 in Resources */,
