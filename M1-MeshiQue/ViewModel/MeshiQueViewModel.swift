@@ -101,7 +101,7 @@ class MeshiQueViewModel: NSObject, ObservableObject {
         let name2 = "boss"
         let name3 = monster_img_list.randomElement()!
         self.monsterList.append(Monster(name: name1))
-        self.monsterList.append(Monster(name: name2))
+        self.monsterList.append(Monster(name: name2, skills: [25, 30, 35]))
         self.monsterList.append(Monster(name: name3))
     }
     
