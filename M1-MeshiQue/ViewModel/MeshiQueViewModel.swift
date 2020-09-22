@@ -120,6 +120,12 @@ class MeshiQueViewModel: NSObject, ObservableObject {
                         self.message = "ダメージをうけた！！"
                         if self.hero.hpValue >= damage_monster {
                             self.hero.hpValue -= damage_monster
+                            if self.hero.hpValue == 0 {
+                                self.clearOrOver = "over"
+                                self.bgmPlaySound(name: "bgm_gameover")
+                                self.showAlert = true
+                                self.objectWillChange.send()
+                            }
                             self.objectWillChange.send()
                         } else if self.hero.hpValue < damage_monster {
                             self.hero.hpValue = 0
