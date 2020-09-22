@@ -12,9 +12,15 @@ struct OpeningView: View {
     @EnvironmentObject var meshiqueViewModel: MeshiQueViewModel
     var body: some View {
         VStack {
-            Text("メシクエ")
-                .font(.custom("DragonQuestFC", size: 350))
-                .offset(y: -80)
+            HStack {
+                Image("icon")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 250, height: 250)
+                Text("シクエ")
+                    .font(.custom("DragonQuestFC", size: 350))
+                    .offset(y: -80)
+            }
 
             TextField("IPアドレスを入力してね", text: $meshiqueViewModel.ipAddress)
                 .frame(width: 200,  height: 50)
