@@ -11,7 +11,8 @@ import Combine
 import SocketIO
 import AVFoundation
 
-class MeshiQueViewModel: NSObject, ObservableObject {
+class MeshiQueViewModel: NSObject, ObservableObject, SocketProtocol {
+    
     @Published var monsterList: [Monster] = [Monster(), Monster(), Monster()]
     @Published var startFlag: Bool = false
     @Published var selectedMonster: Int = 0
@@ -20,8 +21,7 @@ class MeshiQueViewModel: NSObject, ObservableObject {
     @Published var message: String!
     @Published var backgroundImgName: String!
     
-    var manager: SocketManager!
-    var socket: SocketIOClient!
+    var socket: SocketSignal!
     var bgmPlayer: AVAudioPlayer!
     var sePlayer: AVAudioPlayer!
     var ipAddress: String = "163.221.128.44:5000"
@@ -34,6 +34,8 @@ class MeshiQueViewModel: NSObject, ObservableObject {
     override init() {
         super.init()
         bgmPlaySound(name: "bgm_opening")
+        socket = SocketSignal()
+        socket.delegate = self
     }
     
     func start() {
@@ -45,7 +47,8 @@ class MeshiQueViewModel: NSObject, ObservableObject {
         bgmPlaySound(name: "bgm_battle1")
         enemeySetUp1()
         heroSetUp()
-        connect()
+        socket.ipAddress = ipAddress
+        socket.connect()
     }
     
     func nextStage() {
@@ -68,21 +71,6 @@ class MeshiQueViewModel: NSObject, ObservableObject {
             message = "にげれなかった！！"
             monsterAttack()
         }
-    }
-    
-    func connect() {
-        manager = SocketManager(socketURL: URL(string: "http://" + ipAddress)!, config: [.log(true), .compress])
-        socket = manager.defaultSocket
-        
-        socket.on(clientEvent: .connect) { data, ack in
-            print("connect")
-        }
-        
-        socket.on("from_chopstick") { data, ack in
-            self.heroAttak(selectedSkill: data[0] as! Int)
-        }
-        
-        socket.connect()
     }
     
     func enemeySetUp1() {
@@ -110,7 +98,7 @@ class MeshiQueViewModel: NSObject, ObservableObject {
     }
     
     // 主人公側の攻撃
-    func heroAttak(selectedSkill: Int){
+    func heroAttack(selectedSkill: Int){
         if !underAttack && hero.hpValue > 0 {
             underAttack = true
             message = skill_list[selectedSkill]

@@ -60,7 +60,7 @@ struct BattleView: View {
                 Spacer()
                 HStack {
                     VStack {
-                        Button(action: {self.meshiqueViewModel.heroAttak(selectedSkill: 0)}){
+                        Button(action: {self.meshiqueViewModel.heroAttack(selectedSkill: 0)}){
                             if self.meshiqueViewModel.previousAttak == 0 {
                                 Text("こめ")
                                 .font(.custom("DragonQuestFC", size: 55))
@@ -71,7 +71,7 @@ struct BattleView: View {
                                 .foregroundColor(.white)
                             }
                         }
-                        Button(action: {self.meshiqueViewModel.heroAttak(selectedSkill: 1)}){
+                        Button(action: {self.meshiqueViewModel.heroAttack(selectedSkill: 1)}){
                             if self.meshiqueViewModel.previousAttak == 1 {
                                 Text("たまご")
                                 .font(.custom("DragonQuestFC", size: 55))
@@ -82,7 +82,7 @@ struct BattleView: View {
                                 .foregroundColor(.white)
                             }
                         }
-                        Button(action: {self.meshiqueViewModel.heroAttak(selectedSkill: 2)}){
+                        Button(action: {self.meshiqueViewModel.heroAttack(selectedSkill: 2)}){
                             if self.meshiqueViewModel.previousAttak == 2 {
                                 Text("さかな")
                                 .font(.custom("DragonQuestFC", size: 55))
@@ -93,7 +93,7 @@ struct BattleView: View {
                                 .foregroundColor(.white)
                             }
                         }
-                        Button(action: {self.meshiqueViewModel.heroAttak(selectedSkill: 3)}){
+                        Button(action: {self.meshiqueViewModel.heroAttack(selectedSkill: 3)}){
                             if self.meshiqueViewModel.previousAttak == 3 {
                                 Text("やさい")
                                 .font(.custom("DragonQuestFC", size: 55))

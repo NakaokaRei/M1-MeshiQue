@@ -20,6 +20,8 @@
 		B190BA5425111D0E00077FDA /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA5325111D0E00077FDA /* GaugeView.swift */; };
 		B190BA56251120CC00077FDA /* MonsterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA55251120CC00077FDA /* MonsterView.swift */; };
 		B190BA5925112C8300077FDA /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA5825112C8300077FDA /* OpeningView.swift */; };
+		B1AEE661251B7FB500187BEA /* SocketSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AEE660251B7FB500187BEA /* SocketSignal.swift */; };
+		B1AEE663251B801600187BEA /* SocketProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AEE662251B801600187BEA /* SocketProtocol.swift */; };
 		B1C615CA2516572200BDA779 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C615C92516572200BDA779 /* Helper.swift */; };
 		B1C615CC251659A800BDA779 /* MonsterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C615CB251659A800BDA779 /* MonsterModel.swift */; };
 		B1C615CF2518B77200BDA779 /* bgm_opening.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B1C615CE2518B77200BDA779 /* bgm_opening.mp3 */; };
@@ -53,6 +55,8 @@
 		B190BA5325111D0E00077FDA /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
 		B190BA55251120CC00077FDA /* MonsterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterView.swift; sourceTree = "<group>"; };
 		B190BA5825112C8300077FDA /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
+		B1AEE660251B7FB500187BEA /* SocketSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketSignal.swift; sourceTree = "<group>"; };
+		B1AEE662251B801600187BEA /* SocketProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProtocol.swift; sourceTree = "<group>"; };
 		B1C615C92516572200BDA779 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		B1C615CB251659A800BDA779 /* MonsterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterModel.swift; sourceTree = "<group>"; };
 		B1C615CE2518B77200BDA779 /* bgm_opening.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_opening.mp3; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				B174311E25163FDE001BFC27 /* MeshiQueViewModel.swift */,
+				B1AEE660251B7FB500187BEA /* SocketSignal.swift */,
+				B1AEE662251B801600187BEA /* SocketProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -333,6 +339,8 @@
 				B15386F92508B80100FE3845 /* ContentView.swift in Sources */,
 				B190BA56251120CC00077FDA /* MonsterView.swift in Sources */,
 				B1C615CA2516572200BDA779 /* Helper.swift in Sources */,
+				B1AEE663251B801600187BEA /* SocketProtocol.swift in Sources */,
+				B1AEE661251B7FB500187BEA /* SocketSignal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
