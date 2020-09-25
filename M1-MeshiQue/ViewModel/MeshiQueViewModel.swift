@@ -143,7 +143,7 @@ class MeshiQueViewModel: NSObject, ObservableObject, SocketProtocol {
         DispatchQueue.global().async {
             for monster in self.monsterList {
                 if monster.hpValue != 0 {
-                    Thread.sleep(forTimeInterval: 0.7)
+                    Thread.sleep(forTimeInterval: 1.0)
                     DispatchQueue.main.async() {
                         self.sePlaySound(name: "se_monsterAttack")
                         let damage_monster = monster.attack()
