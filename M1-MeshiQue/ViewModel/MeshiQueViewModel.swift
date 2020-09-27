@@ -33,7 +33,7 @@ class MeshiQueViewModel: NSObject, ObservableObject, SocketProtocol {
     
     override init() {
         super.init()
-        bgmPlaySound(name: "bgm_opening")
+        bgmPlaySound(name: "bgm_opening2")
         socket = SocketSignal()
         socket.delegate = self
     }
@@ -65,7 +65,7 @@ class MeshiQueViewModel: NSObject, ObservableObject, SocketProtocol {
         if [true, false].randomElement()! && !underAttack {
             startFlag = false
             sePlaySound(name: "se_escape")
-            bgmPlaySound(name: "bgm_opening")
+            bgmPlaySound(name: "bgm_opening2")
         } else if !underAttack {
             underAttack = true
             message = "にげれなかった！！"
