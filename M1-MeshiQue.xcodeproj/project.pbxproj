@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		368659E829D025EC7934B4D8 /* Pods_M1_MeshiQue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB8C0105BA4B98252A9AD05 /* Pods_M1_MeshiQue.framework */; };
+		B1458BBF252038DD008CCB81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1458BBE252038DD008CCB81 /* Assets.xcassets */; };
+		B1458BC125203FAF008CCB81 /* bgm_opening2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B1458BC025203FAF008CCB81 /* bgm_opening2.mp3 */; };
 		B15386F52508B80100FE3845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15386F42508B80100FE3845 /* AppDelegate.swift */; };
 		B15386F72508B80100FE3845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15386F62508B80100FE3845 /* SceneDelegate.swift */; };
 		B15386F92508B80100FE3845 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15386F82508B80100FE3845 /* ContentView.swift */; };
-		B15386FB2508B80200FE3845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B15386FA2508B80200FE3845 /* Assets.xcassets */; };
 		B15386FE2508B80200FE3845 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B15386FD2508B80200FE3845 /* Preview Assets.xcassets */; };
 		B15387012508B80200FE3845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15386FF2508B80200FE3845 /* LaunchScreen.storyboard */; };
 		B174311C25162708001BFC27 /* HeroGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B174311B25162708001BFC27 /* HeroGaugeView.swift */; };
 		B174311F25163FDE001BFC27 /* MeshiQueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B174311E25163FDE001BFC27 /* MeshiQueViewModel.swift */; };
 		B174312425164527001BFC27 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B174312325164527001BFC27 /* HeroModel.swift */; };
-		B18A279B25201655009ECE5C /* bgm_opening2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B18A279A25201655009ECE5C /* bgm_opening2.mp3 */; };
 		B190BA5425111D0E00077FDA /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA5325111D0E00077FDA /* GaugeView.swift */; };
 		B190BA56251120CC00077FDA /* MonsterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA55251120CC00077FDA /* MonsterView.swift */; };
 		B190BA5925112C8300077FDA /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B190BA5825112C8300077FDA /* OpeningView.swift */; };
@@ -42,18 +42,18 @@
 		02A90FD9873B41C8BAF202A0 /* Pods-M1-MeshiQue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M1-MeshiQue.debug.xcconfig"; path = "Target Support Files/Pods-M1-MeshiQue/Pods-M1-MeshiQue.debug.xcconfig"; sourceTree = "<group>"; };
 		0CEA63D32E2FC8014CA8E7E6 /* Pods-M1-MeshiQue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M1-MeshiQue.release.xcconfig"; path = "Target Support Files/Pods-M1-MeshiQue/Pods-M1-MeshiQue.release.xcconfig"; sourceTree = "<group>"; };
 		4FB8C0105BA4B98252A9AD05 /* Pods_M1_MeshiQue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M1_MeshiQue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1458BBE252038DD008CCB81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B1458BC025203FAF008CCB81 /* bgm_opening2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_opening2.mp3; sourceTree = "<group>"; };
 		B15386F12508B80100FE3845 /* M1-MeshiQue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "M1-MeshiQue.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15386F42508B80100FE3845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B15386F62508B80100FE3845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B15386F82508B80100FE3845 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B15386FA2508B80200FE3845 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B15386FD2508B80200FE3845 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B15387002508B80200FE3845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B15387022508B80200FE3845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B174311B25162708001BFC27 /* HeroGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroGaugeView.swift; sourceTree = "<group>"; };
 		B174311E25163FDE001BFC27 /* MeshiQueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshiQueViewModel.swift; sourceTree = "<group>"; };
 		B174312325164527001BFC27 /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
-		B18A279A25201655009ECE5C /* bgm_opening2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_opening2.mp3; sourceTree = "<group>"; };
 		B190BA5325111D0E00077FDA /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
 		B190BA55251120CC00077FDA /* MonsterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterView.swift; sourceTree = "<group>"; };
 		B190BA5825112C8300077FDA /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
@@ -124,6 +124,7 @@
 		B15386F32508B80100FE3845 /* M1-MeshiQue */ = {
 			isa = PBXGroup;
 			children = (
+				B1458BBE252038DD008CCB81 /* Assets.xcassets */,
 				B1C615CD2518B73500BDA779 /* sounds */,
 				B1E5C009251110F5001A4679 /* fonts */,
 				B17431202516403D001BFC27 /* Model */,
@@ -131,7 +132,6 @@
 				B190BA57251120DA00077FDA /* View */,
 				B15386F42508B80100FE3845 /* AppDelegate.swift */,
 				B15386F62508B80100FE3845 /* SceneDelegate.swift */,
-				B15386FA2508B80200FE3845 /* Assets.xcassets */,
 				B15386FF2508B80200FE3845 /* LaunchScreen.storyboard */,
 				B15387022508B80200FE3845 /* Info.plist */,
 				B15386FC2508B80200FE3845 /* Preview Content */,
@@ -186,7 +186,7 @@
 				B1C615D62518DE6400BDA779 /* bgm_battle1.mp3 */,
 				B1F23FCE2519ED7400A4E4AF /* bgm_battle2.mp3 */,
 				B1C615CE2518B77200BDA779 /* bgm_opening.mp3 */,
-				B18A279A25201655009ECE5C /* bgm_opening2.mp3 */,
+				B1458BC025203FAF008CCB81 /* bgm_opening2.mp3 */,
 				B1C615DA2518E15D00BDA779 /* bgm_gameclear.mp3 */,
 				B1C615D82518E03600BDA779 /* bgm_gameover.mp3 */,
 				B1F23FD02519F1DB00A4E4AF /* bgm_nextstage.mp3 */,
@@ -269,15 +269,15 @@
 				B1C615D52518D99900BDA779 /* se_monsterAttack.mp3 in Resources */,
 				B15387012508B80200FE3845 /* LaunchScreen.storyboard in Resources */,
 				B1C615DB2518E15D00BDA779 /* bgm_gameclear.mp3 in Resources */,
+				B1458BBF252038DD008CCB81 /* Assets.xcassets in Resources */,
 				B1F23FD12519F1DB00A4E4AF /* bgm_nextstage.mp3 in Resources */,
 				B1F23FCF2519ED7400A4E4AF /* bgm_battle2.mp3 in Resources */,
 				B1C615D32518D98B00BDA779 /* se_escape.mp3 in Resources */,
 				B1C615D72518DE6400BDA779 /* bgm_battle1.mp3 in Resources */,
 				B1C615D92518E03600BDA779 /* bgm_gameover.mp3 in Resources */,
 				B15386FE2508B80200FE3845 /* Preview Assets.xcassets in Resources */,
+				B1458BC125203FAF008CCB81 /* bgm_opening2.mp3 in Resources */,
 				B1C615CF2518B77200BDA779 /* bgm_opening.mp3 in Resources */,
-				B18A279B25201655009ECE5C /* bgm_opening2.mp3 in Resources */,
-				B15386FB2508B80200FE3845 /* Assets.xcassets in Resources */,
 				B1E5C00B2511111C001A4679 /* DragonQuestFC.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

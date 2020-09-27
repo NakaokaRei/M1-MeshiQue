@@ -18,6 +18,12 @@ struct MonsterView: View {
                 .scaledToFill()
                 .frame(width: 270, height: 270)
                 .padding(15)
+            Text(monster.displayName)
+                .font(.custom("DragonQuestFC", size: 50))
+                .foregroundColor(.white)
+                .padding([.leading, .bottom, .trailing], 20.0 )
+                .background(Color.black)
+                .cornerRadius(10)
             GaugeView(value: $monster.hpValue)
         }
     }
