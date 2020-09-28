@@ -29,4 +29,8 @@ class SocketSignal {
         
         socket.connect()
     }
+    
+    func disConnect(){
+        socket.disconnect()
+    }
 }

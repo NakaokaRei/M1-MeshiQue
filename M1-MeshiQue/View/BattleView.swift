@@ -149,14 +149,12 @@ struct BattleView: View {
                     return Alert(title: Text("ゲームオーバー"),
                                  message: Text("スタート画面に戻ります"),
                                  dismissButton: .default(Text("わかりました"),
-                                                         action: {self.meshiqueViewModel.startFlag = false
-                                                                  self.meshiqueViewModel.bgmPlaySound(name: "bgm_opening2")}))
+                                                         action: {self.meshiqueViewModel.goToOpening()}))
                 case "clear":
                     return Alert(title: Text("ゲームクリア！！"),
                                  message: Text("スタート画面に戻ります"),
                                  dismissButton: .default(Text("わかりました"),
-                                                         action: {self.meshiqueViewModel.startFlag = false
-                                                                  self.meshiqueViewModel.bgmPlaySound(name: "bgm_opening2")}))
+                                                         action: {self.meshiqueViewModel.goToOpening()}))
                 case "next":
                     return Alert(title: Text("次はボス戦です！！"),
                                  message: Text("準備はできましたか？？"),

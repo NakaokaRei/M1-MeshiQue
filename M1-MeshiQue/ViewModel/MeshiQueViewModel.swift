@@ -51,6 +51,12 @@ class MeshiQueViewModel: NSObject, ObservableObject, SocketProtocol {
         socket.connect()
     }
     
+    func goToOpening() {
+        startFlag = false
+        bgmPlaySound(name: "bgm_opening2")
+        socket.disConnect()
+    }
+    
     func nextStage() {
         previousAttak = nil
         nowStage = 2
@@ -64,6 +70,7 @@ class MeshiQueViewModel: NSObject, ObservableObject, SocketProtocol {
     func escape() {
         if [true, false].randomElement()! && !underAttack {
             startFlag = false
+            socket.disConnect()
             sePlaySound(name: "se_escape")
             bgmPlaySound(name: "bgm_opening2")
         } else if !underAttack {
