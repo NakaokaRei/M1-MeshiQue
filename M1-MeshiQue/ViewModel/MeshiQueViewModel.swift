@@ -95,12 +95,12 @@ class MeshiQueViewModel: NSObject, ObservableObject, SocketProtocol {
     
     func enemeySetUp2() {
         monsterList = []
-        let name1 = "nakamura"
-        let name2 = "yasumoto"
-        let name3 = "suwa"
-        self.monsterList.append(Monster(name: name1, displayName: "ナッジゆーご"))
-        self.monsterList.append(Monster(name: name2, skills: [25, 30, 35], displayName: "やすもとけいいち"))
-        self.monsterList.append(Monster(name: name3, displayName: "すわシティ"))
+        let name1 = monster_img_list.randomElement()!
+        let name2 = "boss"
+        let name3 = monster_img_list.randomElement()!
+        self.monsterList.append(Monster(name: name1, displayName: "したっぱ"))
+        self.monsterList.append(Monster(name: name2, skills: [25, 30, 35], displayName: "ごはんまじん"))
+        self.monsterList.append(Monster(name: name3, displayName: "したっぱ"))
     }
     
     func heroSetUp() {
