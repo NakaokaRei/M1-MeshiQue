@@ -23,3 +23,6 @@ $ pod install
 * 1 -> たまご
 * 2 -> さかな
 * 3 -> 野菜
+
+# モデルURL
+https://drive.google.com/drive/u/1/folders/1fwgjgS_NRXt-A8N3bn3BOoqnfBfsbr6k
